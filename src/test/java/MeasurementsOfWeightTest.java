@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MeasurementsOfWeightTest {
+
+    @Test
     public void testEqualsIsTrueFor1GramEquals1Gram() throws InvalidMeasurementException {
         double weightInGram = 1;
         MeasurementsOfWeight firstMeasurement = new MeasurementsOfWeight(weightInGram, Unit.UnitOfWeight.Gram);
@@ -69,9 +71,9 @@ class MeasurementsOfWeightTest {
         double tenGramWeight = 10;
         MeasurementsOfWeight measurementInKilogram = new MeasurementsOfWeight(onekilogramWeight, Unit.UnitOfWeight.Kilogram);
         MeasurementsOfWeight measurementInGram = new MeasurementsOfWeight(tenGramWeight, Unit.UnitOfWeight.Gram);
-        MeasurementsOfWeight expectedSum = new MeasurementsOfWeight(1010, Unit.UnitOfWeight.Gram);
+        MeasurementsOfWeight expectedSum = new MeasurementsOfWeight(1020, Unit.UnitOfWeight.Gram);
 
-        MeasurementsOfWeight actualSum = measurementInKilogram.add(measurementInGram);
+        MeasurementsOfWeight actualSum = measurementInKilogram.add(measurementInGram).add(measurementInGram);
 
         assertEquals(expectedSum, actualSum);
     }

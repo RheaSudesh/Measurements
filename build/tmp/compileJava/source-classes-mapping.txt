@@ -1,10 +1,13 @@
 InvalidMeasurementException.java
  InvalidMeasurementException
+MeasurementsOfTemperature.java
+ MeasurementsOfTemperature
+MeasurementsOfWeight.java
+ MeasurementsOfWeight
 MeasurementOfLength.java
  MeasurementOfLength
 Unit.java
  Unit
  Unit$UnitOfLength
+ Unit$UnitOfTemperature
  Unit$UnitOfWeight
-MeasurementsOfWeight.java
- MeasurementsOfWeight

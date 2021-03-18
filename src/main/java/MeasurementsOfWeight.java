@@ -1,4 +1,4 @@
-public class MeasurementsOfWeight  {
+public class MeasurementsOfWeight{
 
     double dimension;
     Unit.UnitOfWeight unit;
@@ -34,4 +34,5 @@ public class MeasurementsOfWeight  {
             throw new IllegalArgumentException("Cannot Subtract larger dimension from smaller dimension");
         }
     }
+
 }
