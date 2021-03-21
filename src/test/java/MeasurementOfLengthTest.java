@@ -29,17 +29,6 @@ public class MeasurementOfLengthTest {
     }
 
     @Test
-    public void testEqualsIsFalseForNonMeasurementInstance() throws IllegalArgumentException {
-        double dimension = 1;
-        MeasurementOfLength firstMeasurement = new MeasurementOfLength(dimension, UnitOfLength.Centimeter);
-        Integer secondMeasurement = 1;
-
-        boolean actual = firstMeasurement.equals(secondMeasurement);
-
-        assertFalse(actual);
-    }
-
-    @Test
     public void testEqualsIsTrueForSameMeasurementInstance() throws IllegalArgumentException {
         double dimension = 1;
         MeasurementOfLength measurement = new MeasurementOfLength(dimension, UnitOfLength.Centimeter);

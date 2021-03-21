@@ -1,11 +1,11 @@
-public class MeasurementsOfWeight extends Measurement {
+public class MeasurementsOfWeight extends MeasurementScalar {
 
     public MeasurementsOfWeight(double dimension, UnitOfWeight unit) throws IllegalArgumentException {
         super(dimension, unit);
     }
 
     @Override
-    public Measurement createMeasurement(double dimension) {
+    public MeasurementScalar createMeasurement(double dimension) {
         return new MeasurementsOfWeight(dimension, UnitOfWeight.Kilogram);
     }
 }

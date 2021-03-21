@@ -1,5 +1,5 @@
 
-class MeasurementOfLength extends Measurement {
+class MeasurementOfLength extends MeasurementScalar {
 
     public MeasurementOfLength(double dimension, UnitOfLength unit) throws IllegalArgumentException {
         super(dimension, unit);
