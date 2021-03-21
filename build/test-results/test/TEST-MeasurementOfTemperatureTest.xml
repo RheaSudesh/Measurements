@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MeasurementOfTemperatureTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-18T12:19:03" hostname="DESKTOP-AB0UK2U" time="0.056">
-  <properties/>
-  <testcase name="testThrowsExceptionIfValueOfKelvinExceedsRange()" classname="MeasurementOfTemperatureTest" time="0.056"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
