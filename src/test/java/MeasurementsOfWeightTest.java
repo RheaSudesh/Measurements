@@ -60,7 +60,6 @@ class MeasurementsOfWeightTest {
         MeasurementsOfWeight measurementInKilogram = new MeasurementsOfWeight(oneTenthOfkilogramWeight, UnitOfWeight.Kilogram);
         MeasurementsOfWeight measurementInGram = new MeasurementsOfWeight(hundredGramWeight, UnitOfWeight.Gram);
 
-        System.out.println("gram " + measurementInGram.unit.dimensionInSIunits(measurementInGram.dimension) + " kilo " + measurementInKilogram.unit.dimensionInSIunits(measurementInKilogram.dimension));
         assertEquals(measurementInGram, measurementInKilogram);
     }
 

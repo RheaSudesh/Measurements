@@ -1,15 +1,16 @@
+
 public abstract class Measurement<T extends Measurement> {
     public double dimension;
     final Unit unit;
 
     public Measurement(double dimension, Unit unit) {
-        if (dimension <= 0)
+        if (unit.dimensionInSIunits(dimension) < 0)
             throw new IllegalArgumentException();
         this.dimension = dimension;
         this.unit = unit;
     }
 
-    public abstract T createMeasurement(double dim);
+    public abstract T createMeasurement(double dimension);
 
     @Override
     public boolean equals(Object object) {

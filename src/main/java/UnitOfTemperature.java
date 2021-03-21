@@ -1,4 +1,4 @@
-public enum UnitOfTemperature {
+public enum UnitOfTemperature implements Unit {
     Celsius("celsius", 273.15),
     Fahrenheit("fahrenheit", -32),
     Kelvin("kelvin", 0);
@@ -15,11 +15,11 @@ public enum UnitOfTemperature {
         return conversionFactorForSIUnit;
     }
 
-    public double dimensionInKelvin(double temperatureValue) {
+    @Override
+    public double dimensionInSIunits(double dimension) {
         if (name.equalsIgnoreCase("fahrenheit"))
-            return (temperatureValue - 32) * 5 / 9 + 273.15;
+            return (dimension - 32) * 5 / 9 + 273.15;
         else
-            return temperatureValue + this.getconversionFactorForSIUnit();
+            return dimension + this.getconversionFactorForSIUnit();
     }
-
 }

@@ -1,15 +1,13 @@
-import javax.naming.LimitExceededException;
-import java.util.Objects;
 
-public class MeasurementsOfTemperature {
+public class MeasurementsOfTemperature extends Measurement {
 
-    private final double dimension;
-    private final Unit.UnitOfTemperature unit;
-    public MeasurementsOfTemperature(double dimension, Unit.UnitOfTemperature unit) throws LimitExceededException {
-        this.dimension=dimension;
-        this.unit=unit;
-        if( this.unit.dimensionInKelvin(dimension)<0)
-            throw new LimitExceededException("Kelvin Value does not support negative values");
+    public MeasurementsOfTemperature(double dimension, UnitOfTemperature unit) {
+        super(dimension, unit);
+    }
+
+    @Override
+    public MeasurementsOfTemperature createMeasurement(double dimension) {
+        return new MeasurementsOfTemperature(dimension, UnitOfTemperature.Kelvin);
     }
 
     @Override
@@ -17,8 +15,8 @@ public class MeasurementsOfTemperature {
         if (this == object) return true;
         if (!(object instanceof MeasurementsOfTemperature)) return false;
         MeasurementsOfTemperature measurement = (MeasurementsOfTemperature) object;
-        System.out.println("this"+this.unit.dimensionInKelvin(dimension)+"  meas"+measurement.unit.dimensionInKelvin(measurement.dimension));
-        return this.unit.dimensionInKelvin(dimension) == measurement.unit.dimensionInKelvin(measurement.dimension);
+
+        return this.unit.dimensionInSIunits(dimension) == measurement.unit.dimensionInSIunits(measurement.dimension);
     }
 
 }

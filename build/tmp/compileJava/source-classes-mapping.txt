@@ -1,14 +1,13 @@
 UnitOfLength.java
  UnitOfLength
-MeasurementsOfTemperature.java
- MeasurementsOfTemperature
 Unit.java
  Unit
- Unit$UnitOfTemperature
-UnitOfWeight.java
- UnitOfWeight
 UnitOfTemperature.java
  UnitOfTemperature
+UnitOfWeight.java
+ UnitOfWeight
+MeasurementsOfTemperature.java
+ MeasurementsOfTemperature
 MeasurementsOfWeight.java
  MeasurementsOfWeight
 MeasurementOfLength.java
