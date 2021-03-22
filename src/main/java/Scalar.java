@@ -1,5 +1,5 @@
-public abstract class MeasurementScalar<T extends MeasurementScalar> extends Measurement {
-    public MeasurementScalar(double dimension, Unit unit) {
+public abstract class Scalar<T extends Scalar> extends Measurement {
+    public Scalar(double dimension, Unit unit) {
         super(dimension, unit);
     }
 

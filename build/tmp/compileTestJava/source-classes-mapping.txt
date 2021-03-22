@@ -1,6 +1,6 @@
-MeasurementOfTemperatureTest.java
- MeasurementOfTemperatureTest
-MeasurementOfLengthTest.java
- MeasurementOfLengthTest
-MeasurementsOfWeightTest.java
- MeasurementsOfWeightTest
+WeightTest.java
+ WeightTest
+LengthTest.java
+ LengthTest
+TemperatureTest.java
+ TemperatureTest
