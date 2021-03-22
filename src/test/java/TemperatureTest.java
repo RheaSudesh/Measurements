@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class TemperatureTest {
 
@@ -10,13 +12,12 @@ public class TemperatureTest {
         double fahrenheitOfValue32 = 32;
         Temperature measurementInCelsius = new Temperature(celsiusOfValue0, Temperature.UnitOfTemperature.Celsius);
         Temperature measurementInFahrenheit = new Temperature(fahrenheitOfValue32, Temperature.UnitOfTemperature.Fahrenheit);
-
         assertEquals(measurementInCelsius, measurementInFahrenheit);
     }
 
     @Test
     public void testIf32FahrenheitIsEqualTo0Celsius() {
-        double celsiusOfValue0 = 273.15;
+        double celsiusOfValue0 = 0;
         double fahrenheitOfValue32 = 32;
         Temperature measurementInCelsius = new Temperature(celsiusOfValue0, Temperature.UnitOfTemperature.Celsius);
         Temperature measurementInFahrenheit = new Temperature(fahrenheitOfValue32, Temperature.UnitOfTemperature.Fahrenheit);
@@ -46,7 +47,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void testIf32FahrenheitIsNotEqualTo1Celsius(){
+    public void testIf32FahrenheitIsNotEqualTo1Celsius() {
         double celsiusOfValue1 = 1;
         double fahrenheitOfValue32 = 32;
         Temperature measurementInCelsius = new Temperature(celsiusOfValue1, Temperature.UnitOfTemperature.Celsius);
@@ -56,7 +57,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void testIf0KelvinIsEqualToMinus273Celsius()  {
+    public void testIf0KelvinIsEqualToMinus273Celsius() {
         double celsiusOfValueMinus273 = -273.15;
         double kelvinOfValue0 = 0;
         Temperature measurementInCelsius = new Temperature(celsiusOfValueMinus273, Temperature.UnitOfTemperature.Celsius);

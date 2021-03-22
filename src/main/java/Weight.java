@@ -1,4 +1,4 @@
-public class Weight extends Scalar {
+public class Weight extends Scalar <Weight>{
     public enum UnitOfWeight implements Unit {
         Gram(0.001),
         Kilogram(1);
@@ -21,7 +21,7 @@ public class Weight extends Scalar {
     }
 
     @Override
-    public Scalar createMeasurement(double dimension) {
+    public Weight createMeasurement(double dimension) {
         return new Weight(dimension, Weight.UnitOfWeight.Kilogram);
     }
 }

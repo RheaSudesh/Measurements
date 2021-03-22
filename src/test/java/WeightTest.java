@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class WeightTest {
 
@@ -10,9 +11,7 @@ class WeightTest {
         Weight firstMeasurement = new Weight(weightInGram, Weight.UnitOfWeight.Gram);
         Weight secondMeasurement = new Weight(weightInGram, Weight.UnitOfWeight.Gram);
 
-        boolean actual = firstMeasurement.equals(secondMeasurement);
-
-        assertTrue(actual);
+        assertEquals(firstMeasurement, secondMeasurement);
     }
 
     @Test
@@ -22,9 +21,7 @@ class WeightTest {
         Weight firstMeasurement = new Weight(twoGramWeight, Weight.UnitOfWeight.Gram);
         Weight secondMeasurement = new Weight(oneGramWeight, Weight.UnitOfWeight.Gram);
 
-        boolean actual = firstMeasurement.equals(secondMeasurement);
-
-        assertFalse(actual);
+        assertEquals(firstMeasurement, secondMeasurement);
     }
 
     @Test
@@ -48,9 +45,7 @@ class WeightTest {
         Weight measurementInKilogram = new Weight(oneTenthOfkilogramWeight, Weight.UnitOfWeight.Kilogram);
         Weight measurementInGram = new Weight(hundredGramWeight, Weight.UnitOfWeight.Gram);
 
-        boolean actual = measurementInKilogram.equals(measurementInGram);
-
-        assertTrue(actual);
+        assertEquals(measurementInGram, measurementInKilogram);
     }
 
     @Test
@@ -71,7 +66,7 @@ class WeightTest {
         Weight measurementInGram = new Weight(tenGramWeight, Weight.UnitOfWeight.Gram);
         Weight expectedSum = new Weight(1010, Weight.UnitOfWeight.Gram);
 
-        Weight actualSum = (Weight) measurementInKilogram.add(measurementInGram);
+        Weight actualSum = measurementInKilogram.add(measurementInGram);
 
         assertEquals(expectedSum, actualSum);
     }
@@ -84,7 +79,7 @@ class WeightTest {
         Weight measurementInGram = new Weight(fiveHundredGramWeight, Weight.UnitOfWeight.Gram);
         Weight expectedDifference = new Weight(1, Weight.UnitOfWeight.Kilogram);
 
-        Weight actualDifference = (Weight) measurementInKilogram.subtract(measurementInGram);
+        Weight actualDifference = measurementInKilogram.subtract(measurementInGram);
 
         assertEquals(expectedDifference, actualDifference);
     }
@@ -107,5 +102,14 @@ class WeightTest {
         assertThrows(IllegalArgumentException.class, () -> measurementOf50Gram.subtract(measurementOf50Gram));
     }
 
+//    @Test
+//    public void testThrowsExceptionForAdding1kilogramTo1kilometer() throws IllegalArgumentException{
+//        double oneKilogram= 1, oneKilometer=1;
+//        Weight measurementOf1kilogram =new Weight(oneKilogram,Weight.UnitOfWeight.Kilogram);
+//        Length measurementOf1Kilometer =new Length(oneKilometer,Length.UnitOfLength.Kilometer);
+//
+//        assertThrows(IllegalArgumentException.class, ()->measurementOf1kilogram.add(measurementOf1Kilometer));
+//
+//    }
 
 }

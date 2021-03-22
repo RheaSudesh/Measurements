@@ -1,7 +1,11 @@
 
-public abstract class Measurement  <T extends Measurement> {
-    public final double dimension;
+public abstract class Measurement<T extends Measurement> {
+    final double dimension;
     final Unit unit;
+
+    public interface Unit {
+        double dimensionInSIunits(double dimension);
+    }
 
     public Measurement(double dimension, Unit unit) {
         double dimensionInSIunits = unit.dimensionInSIunits(dimension);

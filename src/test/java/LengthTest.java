@@ -1,7 +1,7 @@
-
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class LengthTest {
 
@@ -11,9 +11,7 @@ public class LengthTest {
         Length firstMeasurement = new Length(dimension, Length.UnitOfLength.Centimeter);
         Length secondMeasurement = new Length(dimension, Length.UnitOfLength.Centimeter);
 
-        boolean actual = firstMeasurement.equals(secondMeasurement);
-
-        assertTrue(actual);
+        assertEquals(firstMeasurement, secondMeasurement);
     }
 
     @Test
@@ -23,19 +21,7 @@ public class LengthTest {
         Length firstMeasurement = new Length(firstDimension, Length.UnitOfLength.Centimeter);
         Length secondMeasurement = new Length(secondDimension, Length.UnitOfLength.Centimeter);
 
-        boolean actual = firstMeasurement.equals(secondMeasurement);
-
-        assertFalse(actual);
-    }
-
-    @Test
-    public void testEqualsIsTrueForSameMeasurementInstance() throws IllegalArgumentException {
-        double dimension = 1;
-        Length measurement = new Length(dimension, Length.UnitOfLength.Centimeter);
-
-        boolean actual = measurement.equals(measurement);
-
-        assertTrue(actual);
+        assertEquals(firstMeasurement, secondMeasurement);
     }
 
     @Test
@@ -59,9 +45,7 @@ public class LengthTest {
         Length measurementInCentimeter = new Length(dimensionInCentimeter, Length.UnitOfLength.Centimeter);
         Length measurementInMeter = new Length(dimensionInMeter, Length.UnitOfLength.Meter);
 
-        boolean actual = measurementInCentimeter.equals(measurementInMeter);
-
-        assertTrue(actual);
+        assertEquals(measurementInCentimeter, measurementInMeter);
     }
 
     @Test
@@ -71,9 +55,7 @@ public class LengthTest {
         Length measurementInCentimeter = new Length(dimensionInCentimeter, Length.UnitOfLength.Centimeter);
         Length measurementInMeter = new Length(dimensionInMeter, Length.UnitOfLength.Meter);
 
-        boolean actual = measurementInMeter.equals(measurementInCentimeter);
-
-        assertTrue(actual);
+        assertEquals(measurementInCentimeter, measurementInMeter);
     }
 
     @Test
@@ -83,9 +65,7 @@ public class LengthTest {
         Length measurementInCentimeter = new Length(dimensionInCentimeter, Length.UnitOfLength.Centimeter);
         Length measurementInKilometer = new Length(dimensionInKilometer, Length.UnitOfLength.Kilometer);
 
-        boolean actual = measurementInCentimeter.equals(measurementInKilometer);
-
-        assertTrue(actual);
+        assertEquals(measurementInCentimeter, measurementInKilometer);
     }
 
     @Test
@@ -95,9 +75,7 @@ public class LengthTest {
         Length measurementInCentimeter = new Length(dimensionInCentimeter, Length.UnitOfLength.Centimeter);
         Length measurementInKilometer = new Length(dimensionInKilometer, Length.UnitOfLength.Kilometer);
 
-        boolean actual = measurementInKilometer.equals(measurementInCentimeter);
-
-        assertTrue(actual);
+        assertEquals(measurementInCentimeter, measurementInKilometer);
     }
 
     @Test
@@ -108,7 +86,7 @@ public class LengthTest {
         Length measurementInMeter = new Length(dimensionInMeter, Length.UnitOfLength.Meter);
         Length expected = new Length(2, Length.UnitOfLength.Meter);
 
-        Length actual = (Length) measurementInMeter.add(measurementInCentimeter);
+        Length actual = measurementInMeter.add(measurementInCentimeter);
 
         assertEquals(expected, actual);
     }
@@ -121,7 +99,7 @@ public class LengthTest {
         Length measurementInKilometer = new Length(dimensionInKilometer, Length.UnitOfLength.Kilometer);
         Length expected = new Length(100200, Length.UnitOfLength.Centimeter);
 
-        Length actual = (Length) measurementInKilometer.add(measurementInCentimeter);
+        Length actual = measurementInKilometer.add(measurementInCentimeter);
 
         assertEquals(expected, actual);
     }
@@ -134,7 +112,7 @@ public class LengthTest {
         Length measurementInMeter = new Length(dimensionInMeter, Length.UnitOfLength.Meter);
         Length expected = new Length(2, Length.UnitOfLength.Kilometer);
 
-        Length actual = (Length) measurementInMeter.add(measurementInCentimeter);
+        Length actual = measurementInMeter.add(measurementInCentimeter);
 
         assertEquals(expected, actual);
     }
@@ -147,7 +125,7 @@ public class LengthTest {
         Length measurementInMeter = new Length(dimensionInMeter, Length.UnitOfLength.Meter);
         Length expected = new Length(0.5, Length.UnitOfLength.Meter);
 
-        Length actual = (Length) measurementInMeter.subtract(measurementInCentimeter);
+        Length actual = measurementInMeter.subtract(measurementInCentimeter);
 
         assertEquals(expected, actual);
     }
@@ -160,7 +138,7 @@ public class LengthTest {
         Length measurementInMeter = new Length(dimensionInMeter, Length.UnitOfLength.Meter);
         Length expected = new Length(1900, Length.UnitOfLength.Centimeter);
 
-        Length actual = (Length) measurementInCentimeter.subtract(measurementInMeter);
+        Length actual = measurementInCentimeter.subtract(measurementInMeter);
 
         assertEquals(expected, actual);
     }

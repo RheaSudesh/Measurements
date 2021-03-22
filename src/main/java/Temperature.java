@@ -1,8 +1,8 @@
+public class Temperature extends Measurement <Temperature> {
 
-public class Temperature extends Measurement {
     public enum UnitOfTemperature implements Unit {
-        Celsius(1, -273.15),
-        Fahrenheit((double)5/9,- (32 * (double)5/9 ) + 273.15),
+        Celsius(1, 273.15),
+        Fahrenheit((double) 5 / 9, (-32 * (double) 5 / 9) + 273.15),
         Kelvin(1, 0);
 
         private final double multiplicationFactor;
