@@ -19,8 +19,5 @@ public abstract class Scalar <T extends Scalar> extends Measurement {
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Cannot Subtract larger dimension from smaller dimension");
         }
-
     }
-
-
 }

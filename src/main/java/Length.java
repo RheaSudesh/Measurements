@@ -15,6 +15,11 @@ class Length extends Scalar<Length> {
             return dimension * this.multiplicationFactor;
         }
 
+        @Override
+        public Object getSIUnit() {
+            return UnitOfLength.Meter;
+        }
+
     }
 
     public Length(double dimension, UnitOfLength unit) throws IllegalArgumentException {

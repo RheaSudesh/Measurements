@@ -17,6 +17,11 @@ public class Temperature extends Measurement <Temperature> {
         public double dimensionInSIunits(double dimension) {
             return dimension * multiplicationFactor + additionFactor;
         }
+
+        @Override
+        public Object getSIUnit() {
+            return UnitOfTemperature.Kelvin;
+        }
     }
 
     public Temperature(double dimension, UnitOfTemperature unit) {

@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class WeightTest {
@@ -15,13 +16,13 @@ class WeightTest {
     }
 
     @Test
-    public void testEqualsIsFalseFor2GramsEquals1Gram() throws IllegalArgumentException {
+    public void testIf2GramsEqual1Gram() throws IllegalArgumentException {
         double twoGramWeight = 2;
         double oneGramWeight = 1;
         Weight firstMeasurement = new Weight(twoGramWeight, Weight.UnitOfWeight.Gram);
         Weight secondMeasurement = new Weight(oneGramWeight, Weight.UnitOfWeight.Gram);
 
-        assertEquals(firstMeasurement, secondMeasurement);
+        assertNotEquals(firstMeasurement, secondMeasurement);
     }
 
     @Test
@@ -102,14 +103,13 @@ class WeightTest {
         assertThrows(IllegalArgumentException.class, () -> measurementOf50Gram.subtract(measurementOf50Gram));
     }
 
-//    @Test
-//    public void testThrowsExceptionForAdding1kilogramTo1kilometer() throws IllegalArgumentException{
-//        double oneKilogram= 1, oneKilometer=1;
-//        Weight measurementOf1kilogram =new Weight(oneKilogram,Weight.UnitOfWeight.Kilogram);
-//        Length measurementOf1Kilometer =new Length(oneKilometer,Length.UnitOfLength.Kilometer);
-//
-//        assertThrows(IllegalArgumentException.class, ()->measurementOf1kilogram.add(measurementOf1Kilometer));
-//
-//    }
+    @Test
+    public void testIfOneKilogramEqualsOneMeter() throws IllegalArgumentException {
+        double oneKilogram = 1, oneMeter = 1, oneKelvin=1;
+        Weight measurementOf1kilogram = new Weight(oneKilogram, Weight.UnitOfWeight.Kilogram);
+        Length measurementOf1meter = new Length(oneMeter, Length.UnitOfLength.Meter);
+
+        assertNotEquals(measurementOf1kilogram, measurementOf1meter);
+    }
 
 }

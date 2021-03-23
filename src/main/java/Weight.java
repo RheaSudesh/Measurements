@@ -14,6 +14,11 @@ public class Weight extends Scalar <Weight>{
             return dimension * multiplicationFactor;
         }
 
+        @Override
+        public Object getSIUnit() {
+            return UnitOfWeight.Kilogram;
+        }
+
     }
 
     public Weight(double dimension, UnitOfWeight unit) throws IllegalArgumentException {

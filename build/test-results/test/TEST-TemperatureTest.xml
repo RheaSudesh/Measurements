@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TemperatureTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-03-23T08:00:05" hostname="DESKTOP-AB0UK2U" time="0.03">
+  <properties/>
+  <testcase name="testIf32FahrenheitIsNotEqualTo1Celsius()" classname="TemperatureTest" time="0.021"/>
+  <testcase name="testThrowsExceptionIfValueOfCelsiusExceedsRange()" classname="TemperatureTest" time="0.003"/>
+  <testcase name="testIfMinus273CelsiusEqualTo0kelvin()" classname="TemperatureTest" time="0.001"/>
+  <testcase name="testThrowsExceptionIfValueOfFahrenheitExceedsRange()" classname="TemperatureTest" time="0.001"/>
+  <testcase name="testIf0CelsiusIsEqualTo32Fahrenheit()" classname="TemperatureTest" time="0.0"/>
+  <testcase name="testThrowsExceptionIfValueOfKelvinExceedsRange()" classname="TemperatureTest" time="0.001"/>
+  <testcase name="testIf0KelvinIsEqualToMinus273Celsius()" classname="TemperatureTest" time="0.001"/>
+  <testcase name="testIf32FahrenheitIsEqualTo0Celsius()" classname="TemperatureTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

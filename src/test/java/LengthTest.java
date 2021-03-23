@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class LengthTest {
 
@@ -21,7 +22,7 @@ public class LengthTest {
         Length firstMeasurement = new Length(firstDimension, Length.UnitOfLength.Centimeter);
         Length secondMeasurement = new Length(secondDimension, Length.UnitOfLength.Centimeter);
 
-        assertEquals(firstMeasurement, secondMeasurement);
+        assertNotEquals(firstMeasurement, secondMeasurement);
     }
 
     @Test
@@ -69,7 +70,7 @@ public class LengthTest {
     }
 
     @Test
-    public void testEqualsIsTrueForOneThousandthKilometerEquals100Centimeter() throws IllegalArgumentException {
+    public void testIfOneThousandthKilometerEquals100Centimeter() throws IllegalArgumentException {
         double dimensionInCentimeter = 100;
         double dimensionInKilometer = 0.001;
         Length measurementInCentimeter = new Length(dimensionInCentimeter, Length.UnitOfLength.Centimeter);
