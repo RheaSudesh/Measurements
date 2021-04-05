@@ -5,7 +5,6 @@ public abstract class Measurement<T extends Measurement> {
     public interface Unit {
 
         double dimensionInSIunits(double dimension);
-
         Object getSIUnit();
     }
 

@@ -105,7 +105,7 @@ class WeightTest {
 
     @Test
     public void testIfOneKilogramEqualsOneMeter() throws IllegalArgumentException {
-        double oneKilogram = 1, oneMeter = 1, oneKelvin=1;
+        double oneKilogram = 1, oneMeter = 1;
         Weight measurementOf1kilogram = new Weight(oneKilogram, Weight.UnitOfWeight.Kilogram);
         Length measurementOf1meter = new Length(oneMeter, Length.UnitOfLength.Meter);
 
